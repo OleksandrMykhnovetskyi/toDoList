@@ -1,0 +1,89 @@
+
+.wrapper{
+  margin-top: 5%;
+  text-align: center;
+}
+
+.form-element{
+  display: flex;
+  justify-content: center;
+  align-items: center;  
+}
+
+.input-field{
+  text-align: center;
+  margin-left: 2.2vw;
+  width: 25vw;
+  height: 5vh;
+  border: none;
+  border-radius: 5px;
+  color: black; /*not working?*/
+  background-color: beige;/* delete then */
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.checkbox:checked{
+  background-color: green;
+}
+
+.todos{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
+}
+
+.todos input{
+  width: 3vw;
+  height: 3vh;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row;
+}
+
+.todo-li{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 25vw;
+  height: 5vh;
+  list-style: none;
+  font-size: 1.5rem;
+  background-color: aquamarine; /* delete then */
+  border: 1px solid black; /* delete then */
+}
+
+.todo-li.completed p{
+  text-decoration: line-through;
+}
+
+.todo-text{
+  text-align: start;
+  padding-left: 5px;
+  width: 18vw;
+}
+
+.add-button{
+  margin-left: 5px;
+  font-size: 1.5rem;
+  width: 10vw;
+  height: 5vh;
+  border-radius: 5px;
+  /* margin-top: -3px; */
+}
+
+.add-button:hover{
+  cursor: pointer;
+  background-color: aquamarine;
+  border-radius: 5px;
+}
+
+
+.delete-icon svg{
+  width: 2em;
+  height: 1.5em;
+  color: rgb(110, 7, 7);
+  margin-left: auto;
+  /* padding-left: 10px; */
+}
