@@ -1,11 +1,13 @@
 import DeleteIcon from '@mui/icons-material/Delete';
-import { useState } from 'react';
+import { useContext } from 'react';
+import { Context } from './context';
 
 const Todo = (props) => {
+    const {id, title, checked} = props.todo
+    const {deleteTodo, toggleCheck} = useContext(Context)
 
-    const [checkedStatus, setCheckedStatus] = useState(props.todo.checked)
     const classEl = ["todo-li"]
-    if(checkedStatus){
+    if(checked){
         classEl.push("completed")
     }
 
@@ -14,17 +16,18 @@ const Todo = (props) => {
             <input
                 className="checkbox"
                 type="checkbox"
-                value = {props.todo.checked}
-                checked = {checkedStatus}
-                onChange = {()=>setCheckedStatus(!checkedStatus)}
+                value = {checked}
+                checked = {checked}
+                onChange = {()=>toggleCheck(id)}
+                
              />
             <p 
                 className='todo-text'
-                onClick={()=>props.toggleCheck(props.todo.id)}
-                >{props.todo.title}</p>
+                onClick={()=>toggleCheck(id)} 
+                >{title}</p>
             <i 
                 className='delete-icon'
-                onClick = {() => props.deleteTodo(props.todo.id)}
+                onClick = {() => deleteTodo(id)}
                 ><DeleteIcon/></i>
         </li>
     )
